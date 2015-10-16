@@ -60,6 +60,8 @@ func (r *SolvedRecord) UnmarshalXML(d *xml.Decoder, start xml.StartElement) erro
 	return nil
 }
 
+// Provides a list of accepted submission records meeting specified criteria.
+// If call this function with default value ("" or -1), don't use it when API calling
 func SolvedRecordSearchApi(user_id, problem_id, language string, dateBegin, dateEnd int) ([]SolvedRecord, error) {
 	q := url.Values{}
 	if user_id != "" {
